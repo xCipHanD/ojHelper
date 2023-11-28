@@ -270,6 +270,8 @@
                                     hiddenInputs.forEach(function (hiddenInput) {
                                         var fileName = hiddenInput.name;
                                         var escapedContent = hiddenInput.value;
+                                        //删除所有注释
+                                        escapedContent = escapedContent.replace(/\/\/.*/g, '');
                                         filesData[fileName] = escapedContent;
                                     });
                                 } else {
